@@ -1,4 +1,3 @@
-````markdown
 # DR Dispatcher
 
 A full-stack DR (Demand Response) Dispatcher application built with React, Node.js, Express, and MongoDB.
@@ -222,4 +221,3 @@ The core authentication, DR APIs, filtering, DR listing, Data Center display, an
 
 **Bhavesh Sutar**
 
-````
