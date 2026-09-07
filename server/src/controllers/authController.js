@@ -61,7 +61,7 @@ const signup = async (req, res, next) => {
       user,
     });
   } catch (error) {
-    next(error); // Pass any errors to the next middleware for centralized error handling
+    next(error); 
   }
 };
 
