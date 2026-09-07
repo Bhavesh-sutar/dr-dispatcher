@@ -1,49 +1,83 @@
-# DR Dispatcher — Frontend Documentation
-## Technical + Simple Language
+# DR Dispatcher — Frontend
 
-This document explains the frontend in two ways:
-- **Simple language:** what each part does and why it exists.
-- **Technical details:** the actual files, React concepts, functions, API calls, and behavior documented in the project analysis.
+The frontend of the **DR Dispatcher** application is a React-based web application used to authenticate users, display Demand Response (DR) events, filter/search them, and perform DR workflow actions.
 
----
+## Table of Contents
 
-# 1. Frontend in Simple Terms
+- [Overview](#overview)
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Project Structure](#project-structure)
+- [How the Frontend Works](#how-the-frontend-works)
+- [Authentication](#authentication)
+- [DR Dashboard](#dr-dashboard)
+- [Filtering and Search](#filtering-and-search)
+- [DR Actions](#dr-actions)
+- [API Communication](#api-communication)
+- [Environment Configuration](#environment-configuration)
+- [Running the Frontend](#running-the-frontend)
+- [Important Notes](#important-notes)
 
-The frontend is the part of the DR Dispatcher application that the user sees and interacts with in the browser.
+## Overview
 
-It is responsible for:
-- Showing Login and Signup pages.
-- Keeping track of whether the user is logged in.
-- Protecting the DR Dispatcher page from unauthenticated users.
-- Showing DR events in a table.
-- Searching and filtering DR events.
-- Expanding a DR row to see datacenter details.
-- Providing Opt IN, Opt OUT, Optimized, and Submitted buttons.
-- Sending user actions to the backend.
-- Updating the screen after the backend confirms an action.
+The frontend is responsible for everything the user sees and interacts with in the browser.
 
-### Simple frontend flow
+It communicates with the backend through REST APIs and does not directly access MongoDB.
 
-**User → React page → Component → Frontend service → Axios → Backend API → Response → React state → Screen update**
+### Basic flow
 
-The frontend does **not** directly talk to MongoDB. It communicates with the backend API.
+```text
+User
+ ↓
+React UI
+ ↓
+Page / Component
+ ↓
+Frontend Service
+ ↓
+Axios
+ ↓
+Backend API
+ ↓
+Response
+ ↓
+React State
+ ↓
+Updated UI
+```
 
----
+## Features
 
-# 2. Frontend Technology
+- User signup and login
+- Authentication state management
+- Session restoration after page refresh
+- Protected DR Dispatcher route
+- DR event listing
+- DR ID search
+- 1000 ms debounced search
+- Status filtering
+- Event type filtering
+- Date-range filtering
+- Refresh functionality
+- Expandable datacenter details
+- Opt IN / Opt OUT actions
+- Optimized YES / NO actions
+- Submitted YES / NO actions
+- Loading and disabled states during updates
+- Error messages on authentication-related screens
 
-| Technology | What it does |
-|---|---|
-| React | Builds the user interface |
-| React DOM | Mounts React into the browser |
-| React Router DOM | Handles frontend URLs/pages |
-| Axios | Sends HTTP requests to the backend |
-| Vite | Runs and builds the frontend |
-| Context API | Shares authentication state across components |
+## Technology Stack
 
----
+| Technology | Version | Purpose |
+|---|---:|---|
+| React | ^19.2.8 | UI development |
+| React DOM | ^19.2.8 | Mounts React application |
+| React Router DOM | ^7.18.3 | Client-side routing |
+| Axios | ^1.20.0 | HTTP communication |
+| Vite | ^8.2.2 | Development server and build tool |
+| Node.js | v18+ / v20+ | JavaScript runtime |
 
-# 3. Frontend Folder Structure
+## Project Structure
 
 ```text
 client/
@@ -84,361 +118,394 @@ client/
         └── drService.js
 ```
 
----
+## How the Frontend Works
 
-# 4. What Each Frontend File Does
+### Entry Point
 
+`src/main.jsx`
 
+This is where the React application starts.
 
----
+It:
 
-# 5. Important Frontend Concepts in Simple Language
+1. Creates the React root.
+2. Wraps the application with `AuthProvider`.
+3. Enables React `StrictMode`.
+4. Loads global CSS.
+5. Renders `<App />`.
 
-## State
+### Routing
 
-State is information that can change while the application is running.
+`src/App.jsx`
 
-Examples:
-- Login form values.
-- Current logged-in user.
-- Search text.
-- Selected filters.
-- DR records.
-- Which DR row is expanded.
-- Whether a DR row is currently being updated.
-
-React's `useState()` is used for these values.
-
-## Props
-
-Props are values/functions passed from a parent component to a child component.
-
-Example:
+The application defines these routes:
 
 ```text
-DRDispatcher
-    ↓
-DRFilters
-    ↓
-filters + onFilterChange + onRefresh
+/login
+/signup
+/dr-dispatcher
 ```
 
-and:
+The `/dr-dispatcher` route is protected by `ProtectedRoute`.
+
+### Pages
+
+#### `Login.jsx`
+
+Handles user login.
+
+It stores:
+
+- Email
+- Password
+- Error state
+- Submit/loading state
+
+On successful login, the user is redirected to:
 
 ```text
-DRDispatcher
-    ↓
-DRTable
-    ↓
-drs + onDRUpdate
+/dr-dispatcher
 ```
 
-## Context
+#### `Signup.jsx`
 
-`AuthContext.jsx` provides authentication information to multiple components without manually passing it through every component.
+Handles new account registration.
 
-It provides:
-- user
-- loading
-- isAuthenticated
-- login()
-- signup()
-- logout()
+It collects:
 
-## useEffect
+- Name
+- Email
+- Password
 
-`useEffect()` is used when something should happen because a component was loaded or a value changed.
+After successful registration, a success message is displayed.
 
-This project uses it for:
-- Restoring login session.
-- Loading DR data when the dashboard opens.
-- Waiting 1000 ms before applying search input.
+#### `DRDispatcher.jsx`
 
-## useCallback
+This is the main dashboard page.
 
-`useCallback()` is used for functions such as `fetchDRs` and `handleFilterChange` so their references remain stable when passed to child components.
+It manages:
 
----
+- DR records
+- Loading state
+- Error state
+- Active filters
+- Fetching DR data
+- Updating DR actions
+- Refreshing the table
 
-# 6. Frontend Authentication in Simple Language
+## Authentication
 
-When the user logs in:
-
-1. User enters email and password.
-2. `Login.jsx` sends the data to `AuthContext.login()`.
-3. `AuthContext` calls `authService.login()`.
-4. `authService` calls the backend.
-5. Backend returns a JWT token.
-6. Frontend stores the token in `localStorage`.
-7. User information is stored in React state.
-8. User is navigated to `/dr-dispatcher`.
-
-For later API calls, `api.js` reads the token and adds:
+Authentication is managed mainly through:
 
 ```text
-Authorization: Bearer <token>
+AuthContext.jsx
+authService.js
+api.js
+ProtectedRoute.jsx
 ```
 
-The backend then verifies the token.
-
----
-
-# 7. Session Restoration
-
-If the browser is refreshed:
-
-1. `AuthContext` checks `localStorage`.
-2. It looks for `token`.
-3. If there is no token, the user is considered logged out.
-4. If there is a token, frontend calls `/api/auth/me`.
-5. Backend verifies the token.
-6. If valid, the returned user is placed into React state.
-7. The user remains logged in.
-8. If invalid, the token is removed.
-
-This is why the login session can survive a page refresh.
-
----
-
-# 8. Route Protection
-
-The DR Dispatcher page is protected by:
+### Login flow
 
 ```text
-ProtectedRoute
-```
-
-Simple logic:
-
-```text
-Is authentication still loading?
-        ↓
-      Yes → show Loading
-
-        No
-        ↓
-Is user authenticated?
-        ↓
-      No → redirect to /login
-
-        Yes
-        ↓
-Show DR Dispatcher
-```
-
-This is frontend protection. The backend still performs its own JWT verification for protected API requests.
-
----
-
-# 9. DR Dashboard Flow
-
-When `/dr-dispatcher` opens:
-
-```text
-DRDispatcher.jsx
-      ↓
-fetchDRs()
-      ↓
-drService.getDRs()
-      ↓
+Login.jsx
+ ↓
+AuthContext.login()
+ ↓
+authService.login()
+ ↓
 Axios
-      ↓
-GET /api/dr
-      ↓
-Backend
-      ↓
-DR records returned
-      ↓
-setDrs()
-      ↓
-DRTable.jsx
-      ↓
-Rows displayed
+ ↓
+POST /api/auth/login
+ ↓
+Backend returns JWT
+ ↓
+localStorage stores token
+ ↓
+AuthContext stores user
+ ↓
+Navigate to /dr-dispatcher
 ```
 
----
+### Session restoration
 
-# 10. Filtering in Simple Language
-
-The user can filter DR events using:
-
-- Search by `drId`.
-- Status.
-- Event type.
-- From date.
-- To date.
-- Refresh.
-
-### Search
-
-Search has a **1000 ms debounce**.
-
-That means the frontend waits for the user to stop typing for one second before sending the search request.
-
-Example:
+When the application starts:
 
 ```text
-User types: D
-User types: DR
-User types: DR0
-User types: DR00
+Check localStorage for token
         ↓
-Wait 1 second
-        ↓
-Send search request
+Token exists?
+   ↓             ↓
+ No             Yes
+ ↓               ↓
+Logged out    GET /api/auth/me
+                  ↓
+             Token valid?
+              ↓       ↓
+             Yes      No
+              ↓        ↓
+         Restore user  Remove token
 ```
 
-This avoids sending an API request for every individual keystroke.
+### Protected Route
 
-### Other filters
+`ProtectedRoute.jsx` checks:
 
-Status, event type, and date inputs call the filter handler immediately when changed.
+1. Whether authentication is still loading.
+2. Whether a user is authenticated.
 
----
+If the user is not authenticated, it redirects to `/login`.
 
-# 11. DR Table Actions
+## DR Dashboard
 
-The table allows the user to progress a DR event through its workflow.
+`DRDispatcher.jsx` coordinates the DR dashboard.
 
-### Initial state
+The dashboard receives DR records from:
+
+```text
+GET /api/dr
+```
+
+The returned records are stored in React state and passed to:
+
+```text
+DRTable.jsx
+```
+
+## Filtering and Search
+
+`DRFilters.jsx` provides:
+
+- Search
+- Status
+- Event type
+- From date
+- To date
+- Refresh
+
+### Search debounce
+
+Search waits **1000 ms** after the user stops typing before calling the API.
+
+```text
+User types
+   ↓
+searchInput changes
+   ↓
+Wait 1000 ms
+   ↓
+Search API request
+```
+
+If the user types again before the timer finishes, the previous timer is cancelled.
+
+### Available status filters
 
 ```text
 Planned
+In-progress
+Completed
 ```
 
-User can choose:
+### Available event types
 
 ```text
-Opt IN
+DR
+EEA
+```
+
+### Date filtering
+
+The frontend sends:
+
+```text
+fromDate
+toDate
+```
+
+The backend handles the actual database date range.
+
+## DR Actions
+
+`DRTable.jsx` displays the DR workflow controls.
+
+### Workflow
+
+```text
+Planned
+   ├── Opt OUT → Completed
+   │
+   └── Opt IN → In-progress
+                    ↓
+             Optimized YES/NO
+                    ↓
+             Submitted YES/NO
+                    ↓
+                 Completed
+```
+
+The frontend disables buttons when an action is not currently available.
+
+For example:
+
+- Optimized is disabled before Opt IN.
+- Submitted is disabled before the required previous workflow state.
+- Completed actions cannot be selected again.
+- Other buttons are disabled while an update is being processed.
+
+The backend remains the final authority for these business rules.
+
+## API Communication
+
+`src/services/api.js`
+
+Creates a shared Axios instance.
+
+Default API base URL:
+
+```text
+http://localhost:5001/api
 ```
 
 or:
 
 ```text
-Opt OUT
+VITE_API_URL
 ```
 
-### Opt IN
+if that environment variable is configured.
+
+### JWT interceptor
+
+Before sending a request, Axios checks:
 
 ```text
-Planned
-   ↓
-Opt IN
-   ↓
-In-progress
+localStorage.getItem("token")
 ```
 
-Then:
+If a token exists, it adds:
+
+```http
+Authorization: Bearer <token>
+```
+
+to the request.
+
+### Authentication service
+
+`authService.js`
+
+Provides:
 
 ```text
-Optimized = YES / NO
+signup()
+login()
+getCurrentUser()
 ```
 
-Then:
+### DR service
+
+`drService.js`
+
+Provides:
 
 ```text
-Submitted = YES / NO
-   ↓
-Completed
+getDRs()
+updateDRAction()
 ```
 
-### Opt OUT
+## Environment Configuration
 
-Opt OUT directly completes the DR:
+The frontend can use:
 
 ```text
-Planned
-   ↓
-Opt OUT
-   ↓
-Completed
+VITE_API_URL
 ```
 
-The backend is the final authority for these rules.
+Example:
 
----
+```env
+VITE_API_URL=http://localhost:5001/api
+```
 
-# 12. Example: Clicking Opt IN
-
-When the user clicks **Opt IN**:
+If it is not provided, `api.js` uses:
 
 ```text
-DRTable.jsx
-   ↓
-handleAction()
-   ↓
-DRDispatcher.jsx
-   ↓
-handleDRUpdate()
-   ↓
-drService.updateDRAction()
-   ↓
-Axios PATCH request
-   ↓
-Backend
-   ↓
-Database update
-   ↓
-Updated DR returned
-   ↓
-DRDispatcher replaces old DR in state
-   ↓
-React re-renders table
+http://localhost:5001/api
 ```
 
-While the request is running, `updatingDR` is set to the current DR ID.
+## Running the Frontend
 
-This disables concurrent actions on that row.
+From the `client` directory:
 
----
+```bash
+npm install
+npm run dev
+```
 
-# 13. Frontend and Backend Responsibility
+The Vite development server starts the frontend.
 
-A useful way to understand the application is:
+For a production build:
 
-| Frontend | Backend |
-|---|---|
-| Shows buttons | Decides whether action is valid |
-| Disables buttons based on current state | Enforces rules even if frontend is bypassed |
-| Collects filter values | Builds database query |
-| Sends API request | Processes API request |
-| Stores UI state | Stores permanent data |
-| Displays errors | Generates API errors |
-| Stores JWT in localStorage | Verifies JWT |
-| Displays DR records | Reads DR records from MongoDB |
+```bash
+npm run build
+```
 
-The frontend improves user experience, but the backend must enforce important business rules.
+For linting:
 
----
+```bash
+npm run lint
+```
 
-# 14. Current Frontend Issues / Quirks
+## Important Notes
 
-According to the project analysis:
+### Backend connection
 
-1. `handleDRUpdate` does not catch update errors in `DRDispatcher.jsx`, so an action failure may not show a useful error message.
-2. There is no `/` route in `App.jsx`, so opening the root URL can result in a blank page.
-3. Axios defaults to `http://localhost:5001/api`.
-4. The backend CORS configuration expects the frontend at `http://localhost:5174`.
-5. `App.css` is Vite starter boilerplate and is not referenced by `App.jsx`.
+The frontend depends on the backend API being available.
 
----
+### CORS
 
-# 15. Frontend Summary
+The current backend configuration expects the frontend origin:
 
-In simple terms:
+```text
+http://localhost:5174
+```
 
-**React builds the screen.**
+If the frontend runs on another port, CORS configuration may need to be changed on the backend.
 
-**Pages manage major screens.**
+### Root route
 
-**Components manage individual UI sections.**
+The current routing configuration does not define `/`.
 
-**Context manages login state.**
+The defined routes are:
 
-**Services communicate with the backend.**
+```text
+/login
+/signup
+/dr-dispatcher
+```
 
-**Axios sends HTTP requests and attaches the JWT.**
+Therefore, opening `/` does not currently map to a page.
 
-**React state controls what the user sees.**
+### Error handling
 
-**The backend remains responsible for authentication verification, database operations, and DR business rules.**
+Authentication pages display API errors.
+
+The DR update flow currently has a limitation: an update failure can reset the loading state without displaying a useful error message to the operator.
+
+## Summary
+
+The frontend follows a component-based React architecture:
+
+```text
+Pages
+ ↓
+Components
+ ↓
+Frontend Services
+ ↓
+Axios
+ ↓
+Backend API
+```
+
+Authentication is handled through React Context and JWT-based sessions. DR data is fetched through the backend API, displayed in an interactive table, and updated through protected API requests.
