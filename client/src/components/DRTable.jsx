@@ -82,6 +82,7 @@ const DRTable = ({ drs, onDRUpdate }) => {
             const isOptOut = action === "Opt OUT";
 
             const isExpanded = expandedDR === dr.drId;
+
             const statusClass =
               statusClassMap[dr.status] || "dr-badge-default";
 
@@ -91,7 +92,9 @@ const DRTable = ({ drs, onDRUpdate }) => {
                 <tr
                   key={dr.drId}
                   className={
-                    isUpdating ? "dr-row dr-row-updating" : "dr-row"
+                    isUpdating
+                      ? "dr-row dr-row-updating"
+                      : "dr-row"
                   }
                 >
                   <td className="dr-table-col-expand">
@@ -130,160 +133,234 @@ const DRTable = ({ drs, onDRUpdate }) => {
 
                   <td>{dr.datacenters?.length || 0}</td>
 
-                  <td className="dr-cell-numeric">{dr.flexCalledMw}</td>
+                  <td className="dr-cell-numeric">
+                    {dr.flexCalledMw}
+                  </td>
 
-                  <td className="dr-cell-numeric">{dr.flexAvailableMw}</td>
+                  <td className="dr-cell-numeric">
+                    {dr.flexAvailableMw}
+                  </td>
 
                   {/* ACTION */}
                   <td>
                     <div className="dr-action-group">
-                      <button
-                        type="button"
-                        className={
-                          isOptIn
-                            ? "dr-btn dr-btn-optin dr-btn-selected"
-                            : "dr-btn dr-btn-optin"
-                        }
-                        disabled={actionCompleted || isUpdating}
-                        onClick={() =>
-                          handleAction(
-                            dr.drId,
-                            "Opt IN",
-                            undefined,
-                            undefined
-                          )
-                        }
-                      >
-                        Opt IN
-                      </button>
 
-                      <button
-                        type="button"
-                        className={
-                          isOptOut
-                            ? "dr-btn dr-btn-optout dr-btn-selected"
-                            : "dr-btn dr-btn-optout"
-                        }
-                        disabled={actionCompleted || isUpdating}
-                        onClick={() =>
-                          handleAction(
-                            dr.drId,
-                            "Opt OUT",
-                            undefined,
-                            undefined
-                          )
-                        }
-                      >
-                        Opt OUT
-                      </button>
+                      {/* Before action is selected */}
+                      {!actionCompleted && (
+                        <>
+                          <button
+                            type="button"
+                            className="dr-btn dr-btn-optin"
+                            disabled={isUpdating}
+                            onClick={() =>
+                              handleAction(
+                                dr.drId,
+                                "Opt IN",
+                                undefined,
+                                undefined
+                              )
+                            }
+                          >
+                            Opt IN
+                          </button>
+
+                          <button
+                            type="button"
+                            className="dr-btn dr-btn-optout"
+                            disabled={isUpdating}
+                            onClick={() =>
+                              handleAction(
+                                dr.drId,
+                                "Opt OUT",
+                                undefined,
+                                undefined
+                              )
+                            }
+                          >
+                            Opt OUT
+                          </button>
+                        </>
+                      )}
+
+                      {/* Selected action remains visible but locked */}
+                      {isOptIn && (
+                        <button
+                          type="button"
+                          className="dr-btn dr-btn-optin dr-btn-selected"
+                          disabled
+                        >
+                          Opt IN
+                        </button>
+                      )}
+
+                      {isOptOut && (
+                        <button
+                          type="button"
+                          className="dr-btn dr-btn-optout dr-btn-selected"
+                          disabled
+                        >
+                          Opt OUT
+                        </button>
+                      )}
+
                     </div>
                   </td>
 
                   {/* OPTIMIZED */}
                   <td>
                     <div className="dr-action-group">
-                      <button
-                        type="button"
-                        className={
-                          optimized === "YES"
-                            ? "dr-btn dr-btn-yes dr-btn-selected"
-                            : "dr-btn dr-btn-yes"
-                        }
-                        disabled={
-                          !isOptIn ||
-                          optimizedCompleted ||
-                          isUpdating
-                        }
-                        onClick={() =>
-                          handleAction(
-                            dr.drId,
-                            undefined,
-                            "YES",
-                            undefined
-                          )
-                        }
-                      >
-                        YES
-                      </button>
 
-                      <button
-                        type="button"
-                        className={
-                          optimized === "NO"
-                            ? "dr-btn dr-btn-no dr-btn-selected"
-                            : "dr-btn dr-btn-no"
-                        }
-                        disabled={
-                          !isOptIn ||
-                          optimizedCompleted ||
-                          isUpdating
-                        }
-                        onClick={() =>
-                          handleAction(
-                            dr.drId,
-                            undefined,
-                            "NO",
-                            undefined
-                          )
-                        }
-                      >
-                        NO
-                      </button>
+                      {/* Opt OUT automatically sets Optimized = NO */}
+                      {isOptOut ? (
+                        <button
+                          type="button"
+                          className="dr-btn dr-btn-no dr-btn-selected"
+                          disabled
+                        >
+                          NO
+                        </button>
+                      ) : !optimizedCompleted ? (
+                        <>
+                          <button
+                            type="button"
+                            className="dr-btn dr-btn-yes"
+                            disabled={!isOptIn || isUpdating}
+                            onClick={() =>
+                              handleAction(
+                                dr.drId,
+                                undefined,
+                                "YES",
+                                undefined
+                              )
+                            }
+                          >
+                            YES
+                          </button>
+
+                          <button
+                            type="button"
+                            className="dr-btn dr-btn-no"
+                            disabled={!isOptIn || isUpdating}
+                            onClick={() =>
+                              handleAction(
+                                dr.drId,
+                                undefined,
+                                "NO",
+                                undefined
+                              )
+                            }
+                          >
+                            NO
+                          </button>
+                        </>
+                      ) : (
+                        <>
+                          {/* Only selected option remains */}
+                          {optimized === "YES" && (
+                            <button
+                              type="button"
+                              className="dr-btn dr-btn-yes dr-btn-selected"
+                              disabled
+                            >
+                              YES
+                            </button>
+                          )}
+
+                          {optimized === "NO" && (
+                            <button
+                              type="button"
+                              className="dr-btn dr-btn-no dr-btn-selected"
+                              disabled
+                            >
+                              NO
+                            </button>
+                          )}
+                        </>
+                      )}
+
                     </div>
                   </td>
 
                   {/* SUBMITTED */}
                   <td>
                     <div className="dr-action-group">
-                      <button
-                        type="button"
-                        className={
-                          submitted === "YES"
-                            ? "dr-btn dr-btn-yes dr-btn-selected"
-                            : "dr-btn dr-btn-yes"
-                        }
-                        disabled={
-                          !isOptIn ||
-                          !optimizedCompleted ||
-                          submittedCompleted ||
-                          isUpdating
-                        }
-                        onClick={() =>
-                          handleAction(
-                            dr.drId,
-                            undefined,
-                            undefined,
-                            "YES"
-                          )
-                        }
-                      >
-                        YES
-                      </button>
 
-                      <button
-                        type="button"
-                        className={
-                          submitted === "NO"
-                            ? "dr-btn dr-btn-no dr-btn-selected"
-                            : "dr-btn dr-btn-no"
-                        }
-                        disabled={
-                          !isOptIn ||
-                          !optimizedCompleted ||
-                          submittedCompleted ||
-                          isUpdating
-                        }
-                        onClick={() =>
-                          handleAction(
-                            dr.drId,
-                            undefined,
-                            undefined,
-                            "NO"
-                          )
-                        }
-                      >
-                        NO
-                      </button>
+                      {/* Opt OUT automatically sets Submitted = NO */}
+                      {isOptOut ? (
+                        <button
+                          type="button"
+                          className="dr-btn dr-btn-no dr-btn-selected"
+                          disabled
+                        >
+                          NO
+                        </button>
+                      ) : !submittedCompleted ? (
+                        <>
+                          <button
+                            type="button"
+                            className="dr-btn dr-btn-yes"
+                            disabled={
+                              !isOptIn ||
+                              !optimizedCompleted ||
+                              isUpdating
+                            }
+                            onClick={() =>
+                              handleAction(
+                                dr.drId,
+                                undefined,
+                                undefined,
+                                "YES"
+                              )
+                            }
+                          >
+                            YES
+                          </button>
+
+                          <button
+                            type="button"
+                            className="dr-btn dr-btn-no"
+                            disabled={
+                              !isOptIn ||
+                              !optimizedCompleted ||
+                              isUpdating
+                            }
+                            onClick={() =>
+                              handleAction(
+                                dr.drId,
+                                undefined,
+                                undefined,
+                                "NO"
+                              )
+                            }
+                          >
+                            NO
+                          </button>
+                        </>
+                      ) : (
+                        <>
+                          {/* Only selected option remains */}
+                          {submitted === "YES" && (
+                            <button
+                              type="button"
+                              className="dr-btn dr-btn-yes dr-btn-selected"
+                              disabled
+                            >
+                              YES
+                            </button>
+                          )}
+
+                          {submitted === "NO" && (
+                            <button
+                              type="button"
+                              className="dr-btn dr-btn-no dr-btn-selected"
+                              disabled
+                            >
+                              NO
+                            </button>
+                          )}
+                        </>
+                      )}
+
                     </div>
                   </td>
                 </tr>
@@ -303,11 +380,17 @@ const DRTable = ({ drs, onDRUpdate }) => {
                       <td></td>
                       <td></td>
 
-                      <td className="dr-cell-dc">{dc.dcId}</td>
+                      <td className="dr-cell-dc">
+                        {dc.dcId}
+                      </td>
 
-                      <td className="dr-cell-numeric">{dc.flexCalledMw}</td>
+                      <td className="dr-cell-numeric">
+                        {dc.flexCalledMw}
+                      </td>
 
-                      <td className="dr-cell-numeric">{dc.flexAvailableMw}</td>
+                      <td className="dr-cell-numeric">
+                        {dc.flexAvailableMw}
+                      </td>
 
                       <td></td>
                       <td></td>
