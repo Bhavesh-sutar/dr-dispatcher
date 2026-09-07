@@ -1,0 +1,260 @@
+/* ==========================================================================
+   DRTable.css
+   Data table for DR events. Uses the same --dr-* tokens defined in
+   DRDispatcher.css (loaded first on the page). Presentation only —
+   structure/behavior lives in DRTable.jsx.
+   ========================================================================== */
+
+.dr-table-wrap {
+  background: var(--dr-surface);
+  border: 1px solid var(--dr-border);
+  border-radius: var(--dr-radius-lg);
+  box-shadow: var(--dr-shadow-card);
+  overflow-x: auto;
+}
+
+.dr-table {
+  width: 100%;
+  min-width: 1080px;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.dr-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--dr-text-secondary);
+  background: #f7f9fb;
+  border-bottom: 1px solid var(--dr-border);
+  white-space: nowrap;
+}
+
+.dr-table tbody td {
+  padding: 11px 14px;
+  color: var(--dr-text-primary);
+  border-bottom: 1px solid var(--dr-border);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.dr-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.dr-row:hover {
+  background: #f9fafb;
+}
+
+.dr-row-updating {
+  background: var(--dr-accent-soft);
+}
+
+.dr-cell-id {
+  font-weight: 600;
+  color: var(--dr-text-primary);
+}
+
+.dr-cell-numeric {
+  font-variant-numeric: tabular-nums;
+  color: var(--dr-text-secondary);
+}
+
+/* -------------------------------------------------------------------------
+   Expand toggle
+   ------------------------------------------------------------------------- */
+
+.dr-table-col-expand {
+  width: 36px;
+}
+
+.dr-expand-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--dr-text-secondary);
+  background: var(--dr-surface);
+  border: 1px solid var(--dr-border-strong);
+  border-radius: var(--dr-radius-sm);
+  cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+.dr-expand-btn:hover {
+  background: #f0f2f5;
+  border-color: #b5bdc9;
+}
+
+.dr-expand-btn:focus-visible {
+  outline: 2px solid var(--dr-accent);
+  outline-offset: 1px;
+}
+
+/* -------------------------------------------------------------------------
+   Status badges
+   ------------------------------------------------------------------------- */
+
+.dr-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.dr-badge-planned {
+  color: var(--dr-accent);
+  background: var(--dr-accent-soft);
+}
+
+.dr-badge-in-progress {
+  color: var(--dr-warning);
+  background: var(--dr-warning-bg);
+  border: 1px solid var(--dr-warning-border);
+}
+
+.dr-badge-completed {
+  color: var(--dr-success);
+  background: var(--dr-success-bg);
+  border: 1px solid var(--dr-success-border);
+}
+
+.dr-badge-default {
+  color: var(--dr-text-secondary);
+  background: #eef0f3;
+}
+
+/* -------------------------------------------------------------------------
+   Action button groups (Action / Optimized / Submitted columns)
+   ------------------------------------------------------------------------- */
+
+.dr-action-group {
+  display: flex;
+  gap: 6px;
+}
+
+.dr-btn {
+  height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  border-radius: var(--dr-radius-sm);
+  border: 1px solid var(--dr-border-strong);
+  background: var(--dr-surface);
+  color: var(--dr-text-primary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.dr-btn:focus-visible {
+  outline: 2px solid var(--dr-accent);
+  outline-offset: 1px;
+}
+
+.dr-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+/* Selected state: once a choice has been made (Opt IN/OUT, YES/NO), that
+   button should stay legible and clearly marked as "this one was picked" —
+   even though it's also disabled. Solid fill + full opacity overrides the
+   generic disabled fade above; the sibling (unpicked) button stays faded. */
+.dr-btn-selected {
+  opacity: 1;
+}
+
+.dr-btn-optin.dr-btn-selected,
+.dr-btn-yes.dr-btn-selected {
+  color: #ffffff;
+  background: var(--dr-success);
+  border-color: var(--dr-success);
+}
+
+.dr-btn-optout.dr-btn-selected,
+.dr-btn-no.dr-btn-selected {
+  color: #ffffff;
+  background: var(--dr-danger);
+  border-color: var(--dr-danger);
+}
+
+.dr-btn-optin:not(:disabled):hover,
+.dr-btn-yes:not(:disabled):hover {
+  color: var(--dr-success);
+  border-color: var(--dr-success-border);
+  background: var(--dr-success-bg);
+}
+
+.dr-btn-optout:not(:disabled):hover,
+.dr-btn-no:not(:disabled):hover {
+  color: var(--dr-danger);
+  border-color: var(--dr-danger-border);
+  background: var(--dr-danger-bg);
+}
+
+/* -------------------------------------------------------------------------
+   Expanded data center rows
+   ------------------------------------------------------------------------- */
+
+.dr-row-child td {
+  background: #fafbfc;
+  color: var(--dr-text-secondary);
+}
+
+.dr-cell-dc {
+  padding-left: 28px !important;
+  position: relative;
+}
+
+.dr-cell-dc::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  width: 8px;
+  height: 1px;
+  background: var(--dr-border-strong);
+}
+
+/* -------------------------------------------------------------------------
+   Empty state
+   ------------------------------------------------------------------------- */
+
+.dr-table-empty {
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--dr-text-secondary);
+  font-size: 14px;
+  background: var(--dr-surface);
+  border: 1px solid var(--dr-border);
+  border-radius: var(--dr-radius-lg);
+  box-shadow: var(--dr-shadow-card);
+}
+
+/* -------------------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------------------- */
+
+@media (max-width: 640px) {
+  .dr-table {
+    font-size: 12.5px;
+  }
+
+  .dr-table thead th,
+  .dr-table tbody td {
+    padding: 9px 10px;
+  }
+}

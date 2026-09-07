@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import drService from "../services/drService";
 import DRFilters from "../components/DRFilters";
 import DRTable from "../components/DRTable";
+import "./DRDispatcher.css";
 
 const DRDispatcher = () => {
   const [drs, setDrs] = useState([]);
@@ -84,21 +85,38 @@ const DRDispatcher = () => {
   };
 
   return (
-    <div>
-      <h1>DR Dispatcher</h1>
+    <div className="dr-page">
+      <div className="dr-page-inner">
+        <header className="dr-header">
+          <h1 className="dr-title">DR Dispatcher</h1>
+          <p className="dr-subtitle">
+            Monitor and respond to active demand response events
+          </p>
+        </header>
 
-      <DRFilters
-        filters={filters}
-        onFilterChange={handleFilterChange}
-        onRefresh={handleRefresh}
-      />
+        <DRFilters
+          filters={filters}
+          onFilterChange={handleFilterChange}
+          onRefresh={handleRefresh}
+        />
 
-      {loading && <p>Loading DRs...</p>}
+        {loading && (
+          <div className="dr-status dr-status-loading">
+            <span className="dr-spinner" aria-hidden="true" />
+            <span>Loading DRs…</span>
+          </div>
+        )}
 
-      {error && <p>{error}</p>}
+        {error && (
+          <div className="dr-status dr-status-error" role="alert">
+            {error}
+          </div>
+        )}
 
-      {!loading && !error && <DRTable drs={drs} onDRUpdate={handleDRUpdate}/>}
-
+        {!loading && !error && (
+          <DRTable drs={drs} onDRUpdate={handleDRUpdate} />
+        )}
+      </div>
     </div>
   );
 };
