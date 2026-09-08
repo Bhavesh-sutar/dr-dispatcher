@@ -136,10 +136,17 @@ const getAllDRs = async (
   status,
   eventType,
   fromDate,
-  toDate
+  toDate,
+  page=1,
+  limit=10
 ) => {
   const query = {};
-    // Build the query object based on the provided filters
+
+  //Skip login for pages, eg. for page 2 then skip first 10 entries
+  const skip = (page-1) * limit
+
+
+  // Build the query object based on the provided filters
   if (search) {
     query.drId = { $regex: search, $options: "i" };
   }
@@ -168,9 +175,22 @@ const getAllDRs = async (
     }
   }
 
-  const drs = await DR.find(query).sort({ date: -1 });
+  const total = await DR.countDocuments(query);
 
-  return drs;
+  const drs = await DR.find(query)
+    .sort({ date: -1 })
+    .skip(skip)
+    .limit(limit);
+
+  return {
+    data: drs,
+    pagination: {
+        page,
+        limit,
+        total,
+        totalPages: Math.ceil(total / limit),
+    },
+    };
 };
 
 module.exports = {

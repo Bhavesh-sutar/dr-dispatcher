@@ -35,18 +35,23 @@ const getAllDRs = async (req, res, next) => {
     const eventType = req.query.eventType; // DR or EEA
     const fromDate = req.query.fromDate;
     const toDate = req.query.toDate;
+    const page = Number(req.query.page) || 1;
+    const limit = Number(req.query.limit) || 10;
 
-    const drs = await drService.getAllDRs(
+    const result = await drService.getAllDRs(
       search,
       status,
       eventType,
       fromDate,
-      toDate
+      toDate,
+      page,
+      limit
     );
 
     res.status(200).json({
       success: true,
-      data: drs,
+      data: result.data,
+      pagination: result.pagination,
     });
   } catch (error) {
     next(error);

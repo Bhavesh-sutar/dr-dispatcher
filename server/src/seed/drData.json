@@ -1,0 +1,2252 @@
+[
+  {
+    "_id": {
+      "$oid": "000000000000000000000001"
+    },
+    "drId": "DR0001",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-01T00:00:00.000Z"
+    },
+    "startTime": "10:00:00",
+    "endTime": "14:00:00",
+    "status": "Planned",
+    "flexCalledMw": 50,
+    "flexAvailableMw": 65,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 10.71,
+        "flexAvailableMw": 14.96
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 14.29,
+        "flexAvailableMw": 21.15
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 17.86,
+        "flexAvailableMw": 16.51
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 7.14,
+        "flexAvailableMw": 12.38
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000002"
+    },
+    "drId": "DR0002",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-02T00:00:00.000Z"
+    },
+    "startTime": "12:00:00",
+    "endTime": "16:00:00",
+    "status": "Planned",
+    "flexCalledMw": 60,
+    "flexAvailableMw": 80,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 13.33,
+        "flexAvailableMw": 20.6
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 16.67,
+        "flexAvailableMw": 15.76
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 6.67,
+        "flexAvailableMw": 12.12
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 10.0,
+        "flexAvailableMw": 18.18
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 13.33,
+        "flexAvailableMw": 13.34
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000003"
+    },
+    "drId": "DR0003",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-03T00:00:00.000Z"
+    },
+    "startTime": "14:00:00",
+    "endTime": "22:00:00",
+    "status": "Planned",
+    "flexCalledMw": 70,
+    "flexAvailableMw": 95,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 16.67,
+        "flexAvailableMw": 15.84
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 6.67,
+        "flexAvailableMw": 12.18
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 10.0,
+        "flexAvailableMw": 18.27
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 13.33,
+        "flexAvailableMw": 13.39
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 16.67,
+        "flexAvailableMw": 19.49
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 6.66,
+        "flexAvailableMw": 15.83
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000004"
+    },
+    "drId": "DR0004",
+    "eventType": "EEA",
+    "date": {
+      "$date": "2026-08-04T00:00:00.000Z"
+    },
+    "startTime": "08:00:00",
+    "endTime": "12:00:00",
+    "status": "Planned",
+    "flexCalledMw": 80,
+    "flexAvailableMw": 110,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 6.96,
+        "flexAvailableMw": 12.44
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 10.43,
+        "flexAvailableMw": 18.65
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 13.91,
+        "flexAvailableMw": 13.87
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 17.39,
+        "flexAvailableMw": 20.09
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 6.96,
+        "flexAvailableMw": 16.1
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 10.43,
+        "flexAvailableMw": 11.32
+      },
+      {
+        "dcId": "DC7",
+        "flexCalledMw": 13.92,
+        "flexAvailableMw": 17.53
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000005"
+    },
+    "drId": "DR0005",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-05T00:00:00.000Z"
+    },
+    "startTime": "10:00:00",
+    "endTime": "14:00:00",
+    "status": "Planned",
+    "flexCalledMw": 90,
+    "flexAvailableMw": 100,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 22.5,
+        "flexAvailableMw": 31.25
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 30.0,
+        "flexAvailableMw": 29.17
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 37.5,
+        "flexAvailableMw": 39.58
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000006"
+    },
+    "drId": "DR0006",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-06T00:00:00.000Z"
+    },
+    "startTime": "12:00:00",
+    "endTime": "20:00:00",
+    "status": "Planned",
+    "flexCalledMw": 100,
+    "flexAvailableMw": 115,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 28.57,
+        "flexAvailableMw": 28.6
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 35.71,
+        "flexAvailableMw": 38.94
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 14.29,
+        "flexAvailableMw": 24.95
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 21.43,
+        "flexAvailableMw": 22.51
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000007"
+    },
+    "drId": "DR0007",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-07T00:00:00.000Z"
+    },
+    "startTime": "14:00:00",
+    "endTime": "18:00:00",
+    "status": "Planned",
+    "flexCalledMw": 40,
+    "flexAvailableMw": 60,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 10.53,
+        "flexAvailableMw": 12.97
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 4.21,
+        "flexAvailableMw": 12.13
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 6.32,
+        "flexAvailableMw": 7.15
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 8.42,
+        "flexAvailableMw": 11.63
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 10.52,
+        "flexAvailableMw": 16.12
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000008"
+    },
+    "drId": "DR0008",
+    "eventType": "EEA",
+    "date": {
+      "$date": "2026-08-08T00:00:00.000Z"
+    },
+    "startTime": "08:00:00",
+    "endTime": "12:00:00",
+    "status": "Planned",
+    "flexCalledMw": 50,
+    "flexAvailableMw": 75,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 5.26,
+        "flexAvailableMw": 13.81
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 7.89,
+        "flexAvailableMw": 8.79
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 10.53,
+        "flexAvailableMw": 14.0
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 13.16,
+        "flexAvailableMw": 19.2
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 5.26,
+        "flexAvailableMw": 7.0
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 7.9,
+        "flexAvailableMw": 12.2
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000009"
+    },
+    "drId": "DR0009",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-09T00:00:00.000Z"
+    },
+    "startTime": "10:00:00",
+    "endTime": "18:00:00",
+    "status": "Planned",
+    "flexCalledMw": 60,
+    "flexAvailableMw": 90,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 6.92,
+        "flexAvailableMw": 8.58
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 9.23,
+        "flexAvailableMw": 13.85
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 11.54,
+        "flexAvailableMw": 19.11
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 4.62,
+        "flexAvailableMw": 6.93
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 6.92,
+        "flexAvailableMw": 12.18
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 9.23,
+        "flexAvailableMw": 17.45
+      },
+      {
+        "dcId": "DC7",
+        "flexCalledMw": 11.54,
+        "flexAvailableMw": 11.9
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000000a"
+    },
+    "drId": "DR0010",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-10T00:00:00.000Z"
+    },
+    "startTime": "12:00:00",
+    "endTime": "16:00:00",
+    "status": "Planned",
+    "flexCalledMw": 70,
+    "flexAvailableMw": 80,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 25.45,
+        "flexAvailableMw": 28.36
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 31.82,
+        "flexAvailableMw": 37.46
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 12.73,
+        "flexAvailableMw": 14.18
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000000b"
+    },
+    "drId": "DR0011",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-11T00:00:00.000Z"
+    },
+    "startTime": "14:00:00",
+    "endTime": "18:00:00",
+    "status": "Planned",
+    "flexCalledMw": 80,
+    "flexAvailableMw": 95,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 28.57,
+        "flexAvailableMw": 33.11
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 11.43,
+        "flexAvailableMw": 12.49
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 17.14,
+        "flexAvailableMw": 20.63
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 22.86,
+        "flexAvailableMw": 28.77
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000000c"
+    },
+    "drId": "DR0012",
+    "eventType": "EEA",
+    "date": {
+      "$date": "2026-08-12T00:00:00.000Z"
+    },
+    "startTime": "08:00:00",
+    "endTime": "16:00:00",
+    "status": "Planned",
+    "flexCalledMw": 90,
+    "flexAvailableMw": 110,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 11.25,
+        "flexAvailableMw": 13.24
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 16.88,
+        "flexAvailableMw": 21.9
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 22.5,
+        "flexAvailableMw": 30.56
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 28.12,
+        "flexAvailableMw": 26.99
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 11.25,
+        "flexAvailableMw": 17.31
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000000d"
+    },
+    "drId": "DR0013",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-13T00:00:00.000Z"
+    },
+    "startTime": "10:00:00",
+    "endTime": "14:00:00",
+    "status": "Planned",
+    "flexCalledMw": 100,
+    "flexAvailableMw": 125,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 14.29,
+        "flexAvailableMw": 18.98
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 19.05,
+        "flexAvailableMw": 26.6
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 23.81,
+        "flexAvailableMw": 22.51
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 9.52,
+        "flexAvailableMw": 15.25
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 14.29,
+        "flexAvailableMw": 22.88
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 19.04,
+        "flexAvailableMw": 18.78
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000000e"
+    },
+    "drId": "DR0014",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-14T00:00:00.000Z"
+    },
+    "startTime": "12:00:00",
+    "endTime": "16:00:00",
+    "status": "Planned",
+    "flexCalledMw": 40,
+    "flexAvailableMw": 70,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 6.4,
+        "flexAvailableMw": 13.03
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 8.0,
+        "flexAvailableMw": 7.91
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 3.2,
+        "flexAvailableMw": 8.03
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 4.8,
+        "flexAvailableMw": 12.05
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 6.4,
+        "flexAvailableMw": 6.94
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 8.0,
+        "flexAvailableMw": 10.96
+      },
+      {
+        "dcId": "DC7",
+        "flexCalledMw": 3.2,
+        "flexAvailableMw": 11.08
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000000f"
+    },
+    "drId": "DR0015",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-15T00:00:00.000Z"
+    },
+    "startTime": "14:00:00",
+    "endTime": "22:00:00",
+    "status": "Planned",
+    "flexCalledMw": 50,
+    "flexAvailableMw": 60,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 25.0,
+        "flexAvailableMw": 22.5
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 10.0,
+        "flexAvailableMw": 15.0
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 15.0,
+        "flexAvailableMw": 22.5
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000010"
+    },
+    "drId": "DR0016",
+    "eventType": "EEA",
+    "date": {
+      "$date": "2026-08-16T00:00:00.000Z"
+    },
+    "startTime": "08:00:00",
+    "endTime": "12:00:00",
+    "status": "Planned",
+    "flexCalledMw": 60,
+    "flexAvailableMw": 75,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 8.57,
+        "flexAvailableMw": 13.93
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 12.86,
+        "flexAvailableMw": 20.89
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 17.14,
+        "flexAvailableMw": 16.61
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 21.43,
+        "flexAvailableMw": 23.57
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000011"
+    },
+    "drId": "DR0017",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-17T00:00:00.000Z"
+    },
+    "startTime": "10:00:00",
+    "endTime": "14:00:00",
+    "status": "Planned",
+    "flexCalledMw": 70,
+    "flexAvailableMw": 90,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 12.35,
+        "flexAvailableMw": 20.51
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 16.47,
+        "flexAvailableMw": 16.1
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 20.59,
+        "flexAvailableMw": 22.94
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 8.24,
+        "flexAvailableMw": 17.43
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 12.35,
+        "flexAvailableMw": 13.02
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000012"
+    },
+    "drId": "DR0018",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-18T00:00:00.000Z"
+    },
+    "startTime": "12:00:00",
+    "endTime": "20:00:00",
+    "status": "Planned",
+    "flexCalledMw": 80,
+    "flexAvailableMw": 105,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 13.91,
+        "flexAvailableMw": 14.18
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 17.39,
+        "flexAvailableMw": 20.54
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 6.96,
+        "flexAvailableMw": 16.47
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 10.43,
+        "flexAvailableMw": 11.57
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 13.91,
+        "flexAvailableMw": 17.93
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 17.4,
+        "flexAvailableMw": 24.31
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000013"
+    },
+    "drId": "DR0019",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-19T00:00:00.000Z"
+    },
+    "startTime": "14:00:00",
+    "endTime": "18:00:00",
+    "status": "Planned",
+    "flexCalledMw": 90,
+    "flexAvailableMw": 120,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 18.75,
+        "flexAvailableMw": 21.56
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 7.5,
+        "flexAvailableMw": 16.88
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 11.25,
+        "flexAvailableMw": 12.19
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 15.0,
+        "flexAvailableMw": 18.75
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 18.75,
+        "flexAvailableMw": 25.31
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 7.5,
+        "flexAvailableMw": 9.38
+      },
+      {
+        "dcId": "DC7",
+        "flexCalledMw": 11.25,
+        "flexAvailableMw": 15.93
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000014"
+    },
+    "drId": "DR0020",
+    "eventType": "EEA",
+    "date": {
+      "$date": "2026-08-20T00:00:00.000Z"
+    },
+    "startTime": "08:00:00",
+    "endTime": "12:00:00",
+    "status": "Planned",
+    "flexCalledMw": 100,
+    "flexAvailableMw": 110,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 22.22,
+        "flexAvailableMw": 31.49
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 33.33,
+        "flexAvailableMw": 32.43
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 44.45,
+        "flexAvailableMw": 46.08
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000015"
+    },
+    "drId": "DR0021",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-21T00:00:00.000Z"
+    },
+    "startTime": "10:00:00",
+    "endTime": "18:00:00",
+    "status": "Planned",
+    "flexCalledMw": 40,
+    "flexAvailableMw": 55,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 8.57,
+        "flexAvailableMw": 9.95
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 11.43,
+        "flexAvailableMw": 15.72
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 14.29,
+        "flexAvailableMw": 21.48
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 5.71,
+        "flexAvailableMw": 7.85
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000016"
+    },
+    "drId": "DR0022",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-22T00:00:00.000Z"
+    },
+    "startTime": "12:00:00",
+    "endTime": "16:00:00",
+    "status": "Planned",
+    "flexCalledMw": 50,
+    "flexAvailableMw": 70,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 11.11,
+        "flexAvailableMw": 14.07
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 13.89,
+        "flexAvailableMw": 19.26
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 5.56,
+        "flexAvailableMw": 7.04
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 8.33,
+        "flexAvailableMw": 12.22
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 11.11,
+        "flexAvailableMw": 17.41
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000017"
+    },
+    "drId": "DR0023",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-23T00:00:00.000Z"
+    },
+    "startTime": "14:00:00",
+    "endTime": "18:00:00",
+    "status": "Planned",
+    "flexCalledMw": 60,
+    "flexAvailableMw": 85,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 14.29,
+        "flexAvailableMw": 20.75
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 5.71,
+        "flexAvailableMw": 7.59
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 8.57,
+        "flexAvailableMw": 13.15
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 11.43,
+        "flexAvailableMw": 18.72
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 14.29,
+        "flexAvailableMw": 13.66
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 5.71,
+        "flexAvailableMw": 11.13
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000018"
+    },
+    "drId": "DR0024",
+    "eventType": "EEA",
+    "date": {
+      "$date": "2026-08-24T00:00:00.000Z"
+    },
+    "startTime": "08:00:00",
+    "endTime": "16:00:00",
+    "status": "Planned",
+    "flexCalledMw": 70,
+    "flexAvailableMw": 100,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 6.09,
+        "flexAvailableMw": 8.21
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 9.13,
+        "flexAvailableMw": 14.17
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 12.17,
+        "flexAvailableMw": 20.13
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 15.22,
+        "flexAvailableMw": 14.98
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 6.09,
+        "flexAvailableMw": 11.92
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 9.13,
+        "flexAvailableMw": 17.87
+      },
+      {
+        "dcId": "DC7",
+        "flexCalledMw": 12.17,
+        "flexAvailableMw": 12.72
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000019"
+    },
+    "drId": "DR0025",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-25T00:00:00.000Z"
+    },
+    "startTime": "10:00:00",
+    "endTime": "14:00:00",
+    "status": "Planned",
+    "flexCalledMw": 80,
+    "flexAvailableMw": 90,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 20.0,
+        "flexAvailableMw": 24.55
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 26.67,
+        "flexAvailableMw": 34.09
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 33.33,
+        "flexAvailableMw": 31.36
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000001a"
+    },
+    "drId": "DR0026",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-26T00:00:00.000Z"
+    },
+    "startTime": "12:00:00",
+    "endTime": "16:00:00",
+    "status": "Planned",
+    "flexCalledMw": 90,
+    "flexAvailableMw": 105,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 25.71,
+        "flexAvailableMw": 31.66
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 32.14,
+        "flexAvailableMw": 28.89
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 12.86,
+        "flexAvailableMw": 17.78
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 19.29,
+        "flexAvailableMw": 26.67
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000001b"
+    },
+    "drId": "DR0027",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-27T00:00:00.000Z"
+    },
+    "startTime": "14:00:00",
+    "endTime": "22:00:00",
+    "status": "Planned",
+    "flexCalledMw": 100,
+    "flexAvailableMw": 120,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 26.32,
+        "flexAvailableMw": 25.92
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 10.53,
+        "flexAvailableMw": 16.99
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 15.79,
+        "flexAvailableMw": 25.48
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 21.05,
+        "flexAvailableMw": 21.56
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 26.31,
+        "flexAvailableMw": 30.05
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000001c"
+    },
+    "drId": "DR0028",
+    "eventType": "EEA",
+    "date": {
+      "$date": "2026-08-28T00:00:00.000Z"
+    },
+    "startTime": "08:00:00",
+    "endTime": "12:00:00",
+    "status": "Planned",
+    "flexCalledMw": 40,
+    "flexAvailableMw": 65,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 4.21,
+        "flexAvailableMw": 9.24
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 6.32,
+        "flexAvailableMw": 13.86
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 8.42,
+        "flexAvailableMw": 8.72
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 10.53,
+        "flexAvailableMw": 13.34
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 4.21,
+        "flexAvailableMw": 12.49
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 6.31,
+        "flexAvailableMw": 7.35
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000001d"
+    },
+    "drId": "DR0029",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-29T00:00:00.000Z"
+    },
+    "startTime": "10:00:00",
+    "endTime": "14:00:00",
+    "status": "Planned",
+    "flexCalledMw": 50,
+    "flexAvailableMw": 80,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 5.77,
+        "flexAvailableMw": 13.29
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 7.69,
+        "flexAvailableMw": 8.12
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 9.62,
+        "flexAvailableMw": 12.56
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 3.85,
+        "flexAvailableMw": 12.06
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 5.77,
+        "flexAvailableMw": 6.89
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 7.69,
+        "flexAvailableMw": 11.32
+      },
+      {
+        "dcId": "DC7",
+        "flexCalledMw": 9.61,
+        "flexAvailableMw": 15.76
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000001e"
+    },
+    "drId": "DR0030",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-30T00:00:00.000Z"
+    },
+    "startTime": "12:00:00",
+    "endTime": "20:00:00",
+    "status": "Planned",
+    "flexCalledMw": 60,
+    "flexAvailableMw": 70,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 21.82,
+        "flexAvailableMw": 20.86
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 27.27,
+        "flexAvailableMw": 28.99
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 10.91,
+        "flexAvailableMw": 20.15
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000001f"
+    },
+    "drId": "DR0031",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-31T00:00:00.000Z"
+    },
+    "startTime": "14:00:00",
+    "endTime": "18:00:00",
+    "status": "Planned",
+    "flexCalledMw": 70,
+    "flexAvailableMw": 85,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 25.0,
+        "flexAvailableMw": 27.05
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 10.0,
+        "flexAvailableMw": 19.32
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 15.0,
+        "flexAvailableMw": 15.45
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 20.0,
+        "flexAvailableMw": 23.18
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000020"
+    },
+    "drId": "DR0032",
+    "eventType": "EEA",
+    "date": {
+      "$date": "2026-08-01T00:00:00.000Z"
+    },
+    "startTime": "08:00:00",
+    "endTime": "12:00:00",
+    "status": "Planned",
+    "flexCalledMw": 80,
+    "flexAvailableMw": 100,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 10.0,
+        "flexAvailableMw": 19.23
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 15.0,
+        "flexAvailableMw": 15.38
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 20.0,
+        "flexAvailableMw": 23.08
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 25.0,
+        "flexAvailableMw": 30.77
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 10.0,
+        "flexAvailableMw": 11.54
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000021"
+    },
+    "drId": "DR0033",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-02T00:00:00.000Z"
+    },
+    "startTime": "10:00:00",
+    "endTime": "18:00:00",
+    "status": "Planned",
+    "flexCalledMw": 90,
+    "flexAvailableMw": 115,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 12.86,
+        "flexAvailableMw": 13.69
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 17.14,
+        "flexAvailableMw": 20.81
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 21.43,
+        "flexAvailableMw": 27.93
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 8.57,
+        "flexAvailableMw": 10.4
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 12.86,
+        "flexAvailableMw": 17.53
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 17.14,
+        "flexAvailableMw": 24.64
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000022"
+    },
+    "drId": "DR0034",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-03T00:00:00.000Z"
+    },
+    "startTime": "12:00:00",
+    "endTime": "16:00:00",
+    "status": "Planned",
+    "flexCalledMw": 100,
+    "flexAvailableMw": 130,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 16.0,
+        "flexAvailableMw": 19.88
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 20.0,
+        "flexAvailableMw": 26.76
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 8.0,
+        "flexAvailableMw": 9.94
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 12.0,
+        "flexAvailableMw": 16.82
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 16.0,
+        "flexAvailableMw": 23.71
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 20.0,
+        "flexAvailableMw": 19.12
+      },
+      {
+        "dcId": "DC7",
+        "flexCalledMw": 8.0,
+        "flexAvailableMw": 13.77
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000023"
+    },
+    "drId": "DR0035",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-04T00:00:00.000Z"
+    },
+    "startTime": "14:00:00",
+    "endTime": "18:00:00",
+    "status": "Planned",
+    "flexCalledMw": 40,
+    "flexAvailableMw": 50,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 20.0,
+        "flexAvailableMw": 25.0
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 8.0,
+        "flexAvailableMw": 9.29
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 12.0,
+        "flexAvailableMw": 15.71
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000024"
+    },
+    "drId": "DR0036",
+    "eventType": "EEA",
+    "date": {
+      "$date": "2026-08-05T00:00:00.000Z"
+    },
+    "startTime": "08:00:00",
+    "endTime": "16:00:00",
+    "status": "Planned",
+    "flexCalledMw": 50,
+    "flexAvailableMw": 65,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 7.14,
+        "flexAvailableMw": 9.28
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 10.71,
+        "flexAvailableMw": 15.84
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 14.29,
+        "flexAvailableMw": 22.4
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 17.86,
+        "flexAvailableMw": 17.48
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000025"
+    },
+    "drId": "DR0037",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-06T00:00:00.000Z"
+    },
+    "startTime": "10:00:00",
+    "endTime": "14:00:00",
+    "status": "Planned",
+    "flexCalledMw": 60,
+    "flexAvailableMw": 80,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 10.59,
+        "flexAvailableMw": 14.32
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 14.12,
+        "flexAvailableMw": 20.26
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 17.65,
+        "flexAvailableMw": 15.76
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 7.06,
+        "flexAvailableMw": 11.87
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 10.58,
+        "flexAvailableMw": 17.79
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000026"
+    },
+    "drId": "DR0038",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-07T00:00:00.000Z"
+    },
+    "startTime": "12:00:00",
+    "endTime": "16:00:00",
+    "status": "Planned",
+    "flexCalledMw": 70,
+    "flexAvailableMw": 95,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 12.17,
+        "flexAvailableMw": 19.86
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 15.22,
+        "flexAvailableMw": 14.78
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 6.09,
+        "flexAvailableMw": 11.76
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 9.13,
+        "flexAvailableMw": 17.63
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 12.17,
+        "flexAvailableMw": 12.55
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 15.22,
+        "flexAvailableMw": 18.42
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000027"
+    },
+    "drId": "DR0039",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-08T00:00:00.000Z"
+    },
+    "startTime": "14:00:00",
+    "endTime": "22:00:00",
+    "status": "Planned",
+    "flexCalledMw": 80,
+    "flexAvailableMw": 110,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 16.67,
+        "flexAvailableMw": 16.44
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 6.67,
+        "flexAvailableMw": 12.65
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 10.0,
+        "flexAvailableMw": 18.97
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 13.33,
+        "flexAvailableMw": 13.91
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 16.67,
+        "flexAvailableMw": 20.23
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 6.67,
+        "flexAvailableMw": 16.44
+      },
+      {
+        "dcId": "DC7",
+        "flexCalledMw": 9.99,
+        "flexAvailableMw": 11.36
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000028"
+    },
+    "drId": "DR0040",
+    "eventType": "EEA",
+    "date": {
+      "$date": "2026-08-09T00:00:00.000Z"
+    },
+    "startTime": "08:00:00",
+    "endTime": "12:00:00",
+    "status": "Planned",
+    "flexCalledMw": 90,
+    "flexAvailableMw": 100,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 20.0,
+        "flexAvailableMw": 25.0
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 30.0,
+        "flexAvailableMw": 37.5
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 40.0,
+        "flexAvailableMw": 37.5
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000029"
+    },
+    "drId": "DR0041",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-10T00:00:00.000Z"
+    },
+    "startTime": "10:00:00",
+    "endTime": "14:00:00",
+    "status": "Planned",
+    "flexCalledMw": 100,
+    "flexAvailableMw": 115,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 21.43,
+        "flexAvailableMw": 28.89
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 28.57,
+        "flexAvailableMw": 26.62
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 35.71,
+        "flexAvailableMw": 36.25
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 14.29,
+        "flexAvailableMw": 23.24
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000002a"
+    },
+    "drId": "DR0042",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-11T00:00:00.000Z"
+    },
+    "startTime": "12:00:00",
+    "endTime": "20:00:00",
+    "status": "Planned",
+    "flexCalledMw": 40,
+    "flexAvailableMw": 60,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 8.89,
+        "flexAvailableMw": 9.8
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 11.11,
+        "flexAvailableMw": 14.9
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 4.44,
+        "flexAvailableMw": 13.72
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 6.67,
+        "flexAvailableMw": 8.24
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 8.89,
+        "flexAvailableMw": 13.34
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000002b"
+    },
+    "drId": "DR0043",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-12T00:00:00.000Z"
+    },
+    "startTime": "14:00:00",
+    "endTime": "18:00:00",
+    "status": "Planned",
+    "flexCalledMw": 50,
+    "flexAvailableMw": 75,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 11.9,
+        "flexAvailableMw": 14.93
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 4.76,
+        "flexAvailableMw": 13.47
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 7.14,
+        "flexAvailableMw": 8.28
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 9.52,
+        "flexAvailableMw": 13.31
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 11.9,
+        "flexAvailableMw": 18.34
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 4.78,
+        "flexAvailableMw": 6.67
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000002c"
+    },
+    "drId": "DR0044",
+    "eventType": "EEA",
+    "date": {
+      "$date": "2026-08-13T00:00:00.000Z"
+    },
+    "startTime": "08:00:00",
+    "endTime": "12:00:00",
+    "status": "Planned",
+    "flexCalledMw": 60,
+    "flexAvailableMw": 90,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 5.22,
+        "flexAvailableMw": 13.48
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 7.83,
+        "flexAvailableMw": 8.55
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 10.43,
+        "flexAvailableMw": 13.62
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 13.04,
+        "flexAvailableMw": 18.69
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 5.22,
+        "flexAvailableMw": 6.81
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 7.83,
+        "flexAvailableMw": 11.89
+      },
+      {
+        "dcId": "DC7",
+        "flexCalledMw": 10.43,
+        "flexAvailableMw": 16.96
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000002d"
+    },
+    "drId": "DR0045",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-14T00:00:00.000Z"
+    },
+    "startTime": "10:00:00",
+    "endTime": "18:00:00",
+    "status": "Planned",
+    "flexCalledMw": 70,
+    "flexAvailableMw": 80,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 17.5,
+        "flexAvailableMw": 18.0
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 23.33,
+        "flexAvailableMw": 26.66
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 29.17,
+        "flexAvailableMw": 35.34
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000002e"
+    },
+    "drId": "DR0046",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-15T00:00:00.000Z"
+    },
+    "startTime": "12:00:00",
+    "endTime": "16:00:00",
+    "status": "Planned",
+    "flexCalledMw": 80,
+    "flexAvailableMw": 95,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 22.86,
+        "flexAvailableMw": 26.01
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 28.57,
+        "flexAvailableMw": 34.49
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 11.43,
+        "flexAvailableMw": 13.01
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 17.14,
+        "flexAvailableMw": 21.49
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "00000000000000000000002f"
+    },
+    "drId": "DR0047",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-16T00:00:00.000Z"
+    },
+    "startTime": "14:00:00",
+    "endTime": "18:00:00",
+    "status": "Planned",
+    "flexCalledMw": 90,
+    "flexAvailableMw": 110,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 23.68,
+        "flexAvailableMw": 30.39
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 9.47,
+        "flexAvailableMw": 11.37
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 14.21,
+        "flexAvailableMw": 19.02
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 18.95,
+        "flexAvailableMw": 26.68
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 23.69,
+        "flexAvailableMw": 22.54
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000030"
+    },
+    "drId": "DR0048",
+    "eventType": "EEA",
+    "date": {
+      "$date": "2026-08-17T00:00:00.000Z"
+    },
+    "startTime": "08:00:00",
+    "endTime": "16:00:00",
+    "status": "Planned",
+    "flexCalledMw": 100,
+    "flexAvailableMw": 125,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 10.53,
+        "flexAvailableMw": 12.13
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 15.79,
+        "flexAvailableMw": 20.15
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 21.05,
+        "flexAvailableMw": 28.16
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 26.32,
+        "flexAvailableMw": 24.47
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 10.53,
+        "flexAvailableMw": 16.04
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 15.78,
+        "flexAvailableMw": 24.05
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000031"
+    },
+    "drId": "DR0049",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-18T00:00:00.000Z"
+    },
+    "startTime": "10:00:00",
+    "endTime": "14:00:00",
+    "status": "Planned",
+    "flexCalledMw": 40,
+    "flexAvailableMw": 70,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 4.62,
+        "flexAvailableMw": 9.3
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 6.15,
+        "flexAvailableMw": 13.46
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 7.69,
+        "flexAvailableMw": 8.08
+      },
+      {
+        "dcId": "DC4",
+        "flexCalledMw": 3.08,
+        "flexAvailableMw": 8.32
+      },
+      {
+        "dcId": "DC5",
+        "flexCalledMw": 4.62,
+        "flexAvailableMw": 12.49
+      },
+      {
+        "dcId": "DC6",
+        "flexCalledMw": 6.15,
+        "flexAvailableMw": 7.1
+      },
+      {
+        "dcId": "DC7",
+        "flexCalledMw": 7.69,
+        "flexAvailableMw": 11.25
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "000000000000000000000032"
+    },
+    "drId": "DR0050",
+    "eventType": "DR",
+    "date": {
+      "$date": "2026-08-19T00:00:00.000Z"
+    },
+    "startTime": "12:00:00",
+    "endTime": "16:00:00",
+    "status": "Planned",
+    "flexCalledMw": 50,
+    "flexAvailableMw": 60,
+    "actions": [],
+    "optimized": [],
+    "submitted": [],
+    "datacenters": [
+      {
+        "dcId": "DC1",
+        "flexCalledMw": 18.18,
+        "flexAvailableMw": 24.88
+      },
+      {
+        "dcId": "DC2",
+        "flexCalledMw": 22.73,
+        "flexAvailableMw": 20.8
+      },
+      {
+        "dcId": "DC3",
+        "flexCalledMw": 9.09,
+        "flexAvailableMw": 14.32
+      }
+    ]
+  }
+]

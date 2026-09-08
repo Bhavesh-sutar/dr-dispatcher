@@ -7,6 +7,8 @@ const getDRs = async ({
   eventType = "",
   fromDate = "",
   toDate = "",
+  page = 1,
+  limit = 10
 } = {}) => {
   const params = {};
 
@@ -15,6 +17,8 @@ const getDRs = async ({
   if (eventType) params.eventType = eventType;
   if (fromDate) params.fromDate = fromDate;
   if (toDate) params.toDate = toDate;
+  if (page) params.page = page;
+  if (limit) params.limit = limit;
 
   const response = await api.get("/dr", { params });
 

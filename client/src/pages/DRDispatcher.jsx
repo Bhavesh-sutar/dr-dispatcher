@@ -2,6 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import drService from "../services/drService";
 import DRFilters from "../components/DRFilters";
 import DRTable from "../components/DRTable";
+import Pagination from "../components/Pagination";
+
 import "./DRDispatcher.css";
 
 const DRDispatcher = () => {
@@ -17,14 +19,26 @@ const DRDispatcher = () => {
     toDate: "",
   });
 
-  const fetchDRs = useCallback(async (currentFilters) => {
+  const [pagination, setPagination] = useState({
+    page: 1,
+    limit: 10,
+    total: 0,
+    totalPages: 0,
+  });
+
+  const fetchDRs = useCallback(async (currentFilters, page = 1) => {
     try {
       setLoading(true);
       setError("");
 
-      const response = await drService.getDRs(currentFilters);
+      const response = await drService.getDRs({
+        ...currentFilters,
+        page,
+        limit: 10,
+      });
 
       setDrs(response.data);
+      setPagination(response.pagination);
     } catch (error) {
       setError(
         error.response?.data?.message ||
@@ -36,52 +50,51 @@ const DRDispatcher = () => {
   }, []);
 
   useEffect(() => {
-    fetchDRs({
-      search: "",
-      status: "",
-      eventType: "",
-      fromDate: "",
-      toDate: "",
-    });
+    fetchDRs(filters, 1);
   }, [fetchDRs]);
 
-  const handleFilterChange = useCallback(
-    (name, value) => {
-      const updatedFilters = {
-        ...filters,
-        [name]: value,
-      };
+  const handleFilterChange = (name, value) => {
+    const updatedFilters = {
+      ...filters,
+      [name]: value,
+    };
 
-      setFilters(updatedFilters);
-      fetchDRs(updatedFilters);
-    },
-    [filters, fetchDRs]
-  );
+    setFilters(updatedFilters);
 
+    setPagination((prev) => ({
+      ...prev,
+      page: 1,
+    }));
+
+    fetchDRs(updatedFilters, 1);
+  };
+
+  const handlePageChange = (page) => {
+    fetchDRs(filters, page);
+  };
 
   const handleDRUpdate = async (
-  drId,
-  action,
-  optimized,
-  submitted
-) => {
-  const response = await drService.updateDRAction(
     drId,
     action,
     optimized,
     submitted
-  );
+  ) => {
+    const response = await drService.updateDRAction(
+      drId,
+      action,
+      optimized,
+      submitted
+    );
 
-  setDrs((currentDRs) =>
-    currentDRs.map((dr) =>
-      dr.drId === drId ? response.data : dr
-    )
-  );
-};
-
+    setDrs((currentDRs) =>
+      currentDRs.map((dr) =>
+        dr.drId === drId ? response.data : dr
+      )
+    );
+  };
 
   const handleRefresh = () => {
-    fetchDRs(filters);
+    fetchDRs(filters, pagination.page);
   };
 
   return (
@@ -89,6 +102,7 @@ const DRDispatcher = () => {
       <div className="dr-page-inner">
         <header className="dr-header">
           <h1 className="dr-title">DR Dispatcher</h1>
+
           <p className="dr-subtitle">
             Monitor and respond to active demand response events
           </p>
@@ -98,6 +112,12 @@ const DRDispatcher = () => {
           filters={filters}
           onFilterChange={handleFilterChange}
           onRefresh={handleRefresh}
+        />
+
+        <Pagination
+          page={pagination.page}
+          totalPages={pagination.totalPages}
+          onPageChange={handlePageChange}
         />
 
         {loading && (
@@ -114,7 +134,10 @@ const DRDispatcher = () => {
         )}
 
         {!loading && !error && (
-          <DRTable drs={drs} onDRUpdate={handleDRUpdate} />
+          <DRTable
+            drs={drs}
+            onDRUpdate={handleDRUpdate}
+          />
         )}
       </div>
     </div>
