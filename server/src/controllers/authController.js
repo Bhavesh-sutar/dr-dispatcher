@@ -47,7 +47,7 @@ const signup = async (req, res, next) => {
     }
 
     // Call the signup function from the authService to create a new user in the database
-    const user = await authService.signup({
+    const signupResult = await authService.signup({
       name,
       email,
       password,
@@ -58,7 +58,7 @@ const signup = async (req, res, next) => {
     res.status(201).json({
       success: true,
       message: "Account created successfully",
-      user,
+      ...signupResult
     });
   } catch (error) {
     next(error); 

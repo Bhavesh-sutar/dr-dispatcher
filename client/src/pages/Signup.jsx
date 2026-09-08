@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import "./Signup.css";
 
 const Signup = () => {
   const { signup } = useAuth();
+
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -34,7 +37,7 @@ const Signup = () => {
 
     try {
       await signup(formData);
-
+      navigate("/dr-dispatcher");
       setSuccess("Account created successfully");
 
       setFormData({

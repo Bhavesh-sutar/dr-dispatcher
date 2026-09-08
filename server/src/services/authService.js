@@ -4,6 +4,7 @@ const User = require("../models/User"); // Import the User model from the models
 const { generateToken } = require("../utils/jwt"); // Import the generateToken function 
 // from the utils directory to create JSON Web Tokens (JWTs) for authentication
 
+
 const signup = async ({ name, email, password }) => {
   // Normalize the email by converting it to lowercase and trimming whitespace
   const normalizedEmail = email.toLowerCase().trim(); 
@@ -28,12 +29,18 @@ const signup = async ({ name, email, password }) => {
     password: hashedPassword,
   });
 
+  
+  const token = generateToken(user._id);
+
   // Return an object containing the user's ID, name, and email (excluding the password) 
   // to be used in the response
   return {
-      id: user._id,
-      name: user.name,
-      email: user.email
+        token,
+        user: {   
+            id: user._id,
+            name: user.name,
+            email: user.email
+        }
   };
 };
 

@@ -7,6 +7,7 @@ const cors = require("cors"); // Import the CORS middleware to handle Cross-Orig
 const helmet = require("helmet"); // Import the Helmet middleware to enhance security by setting various HTTP headers
 const authRoutes = require("./routes/authRoutes"); // Import the authentication routes defined in the authRoutes.js file
 const drRoutes = require("./routes/drRoutes"); // Import the DR routes defined in the drRoutes.js file
+const errorHandler = require("./middleware/errorHandler");
 
 const app = express(); // Create an instance of the Express application
 
@@ -23,6 +24,7 @@ app.use(express.json()); // Use built-in middleware to parse incoming JSON reque
 
 app.use("/api/auth", authRoutes); // Mount the authentication routes at the /api/auth path
 app.use("/api/dr", drRoutes); // Mount the DR routes at the /api/dr path
+app.use(errorHandler)
 
 app.get("/api/health", (req, res) => {
   res.json({

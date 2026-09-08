@@ -41,7 +41,13 @@ export const AuthProvider = ({ children }) => {
   };
 
   const signup = async (userData) => {
-    return await authService.signup(userData);
+    const data = await authService.signup(userData);
+
+    localStorage.setItem("token", data.token);
+
+    setUser(data.user);
+
+    return data;
   };
 
   const logout = () => {
