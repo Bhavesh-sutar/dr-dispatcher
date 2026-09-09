@@ -42,7 +42,7 @@ const DRDispatcher = () => {
     } catch (error) {
       setError(
         error.response?.data?.message ||
-          "Failed to fetch DRs. Please try again."
+          "Failed to fetch DRs. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -73,23 +73,16 @@ const DRDispatcher = () => {
     fetchDRs(filters, page);
   };
 
-  const handleDRUpdate = async (
-    drId,
-    action,
-    optimized,
-    submitted
-  ) => {
+  const handleDRUpdate = async (drId, action, optimized, submitted) => {
     const response = await drService.updateDRAction(
       drId,
       action,
       optimized,
-      submitted
+      submitted,
     );
 
     setDrs((currentDRs) =>
-      currentDRs.map((dr) =>
-        dr.drId === drId ? response.data : dr
-      )
+      currentDRs.map((dr) => (dr.drId === drId ? response.data : dr)),
     );
   };
 
@@ -134,10 +127,7 @@ const DRDispatcher = () => {
         )}
 
         {!loading && !error && (
-          <DRTable
-            drs={drs}
-            onDRUpdate={handleDRUpdate}
-          />
+          <DRTable drs={drs} onDRUpdate={handleDRUpdate} />
         )}
       </div>
     </div>

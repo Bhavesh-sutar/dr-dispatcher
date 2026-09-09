@@ -1,0 +1,136 @@
+/* ==========================================================================
+   GlobalNotification.css
+   Fixed top banner for global success/error/warning/info notifications.
+   ========================================================================== */
+
+.global-notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  min-width: 320px;
+  max-width: 520px;
+  padding: 14px 16px 14px 18px;
+
+  border-radius: 10px;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08),
+    0 10px 24px -6px rgba(0, 0, 0, 0.12);
+
+  font-size: 14px;
+  line-height: 1.4;
+  font-family: inherit;
+
+  animation: notification-slide-in 220ms ease;
+}
+
+@keyframes notification-slide-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -12px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.global-notification-message {
+  flex: 1;
+  font-weight: 500;
+}
+
+.global-notification-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 24px;
+  height: 24px;
+  padding: 0;
+
+  font-size: 14px;
+  line-height: 1;
+  font-family: inherit;
+
+  color: currentColor;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  opacity: 0.6;
+  cursor: pointer;
+
+  transition: opacity 120ms ease, background-color 120ms ease;
+}
+
+.global-notification-close:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.global-notification-close:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  opacity: 1;
+}
+
+/* -------------------------------------------------------------------------
+   Type variants
+   ------------------------------------------------------------------------- */
+
+.global-notification.success {
+  color: #15803d;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.global-notification.error {
+  color: #b91c1c;
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.global-notification.warning {
+  color: #b45309;
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
+.global-notification.info {
+  color: #1d4ed8;
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+/* -------------------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------------------- */
+
+@media (max-width: 480px) {
+  .global-notification {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    transform: none;
+    min-width: 0;
+    max-width: none;
+  }
+
+  @keyframes notification-slide-in {
+    from {
+      opacity: 0;
+      transform: translateY(-12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

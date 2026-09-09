@@ -13,8 +13,8 @@ const login = async (credentials) => {
 };
 
 const getCurrentUser = async () => {
-    const response = await api.get("/auth/me");
-    return response.data;
+  const response = await api.get("/auth/me");
+  return response.data;
 };
 
 // Create an authService object that contains the signup and login functions for export

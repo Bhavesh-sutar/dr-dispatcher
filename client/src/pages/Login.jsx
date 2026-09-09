@@ -37,7 +37,7 @@ const Login = () => {
       navigate("/dr-dispatcher");
     } catch (error) {
       setError(
-        error.response?.data?.message || "Login failed. Please try again."
+        error.response?.data?.message || "Login failed. Please try again.",
       );
     } finally {
       setIsSubmitting(false);
@@ -120,13 +120,18 @@ const Login = () => {
               type="submit"
               disabled={isSubmitting}
             >
-              {isSubmitting && <span className="login-spinner" aria-hidden="true" />}
+              {isSubmitting && (
+                <span className="login-spinner" aria-hidden="true" />
+              )}
               {isSubmitting ? "Signing in…" : "Sign in"}
             </button>
           </form>
 
           <div className="login-footer">
-            Don&apos;t have an account? <Link className="login-footer-link" to="/signup">Sign up</Link>
+            Don&apos;t have an account?{" "}
+            <Link className="login-footer-link" to="/signup">
+              Sign up
+            </Link>
           </div>
         </div>
       </div>

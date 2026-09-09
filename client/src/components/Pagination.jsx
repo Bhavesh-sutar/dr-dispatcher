@@ -158,7 +158,7 @@ const Pagination = ({
           onClick={handleGoToPage}
         >
           Go
-        </button>
+        </button>   
       </div>
 
     </div>
