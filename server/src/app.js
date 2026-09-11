@@ -12,10 +12,10 @@ const errorHandler = require("./middleware/errorHandler");
 const app = express(); // Create an instance of the Express application
 
 app.use(helmet()); // Use Helmet middleware to enhance security by setting various HTTP headers
-
+// Use CORS middleware to allow requests from the specified origin and enable credentials
 app.use(
   cors({
-    origin: "http://localhost:5174",
+    origin: "http://localhost:5173",
     credentials: true,
   }),
 ); // Use CORS middleware to allow requests from the specified origin and enable credentials

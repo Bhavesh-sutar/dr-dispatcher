@@ -29,26 +29,20 @@ const DRFilters = ({ filters, onFilterChange, onRefresh }) => {
           className="dr-filters-input dr-filters-date"
           type="date"
           value={filters.fromDate}
-          onChange={(event) =>
-            onFilterChange("fromDate", event.target.value)
-          }
+          onChange={(event) => onFilterChange("fromDate", event.target.value)}
         />
 
         <input
           className="dr-filters-input dr-filters-date"
           type="date"
           value={filters.toDate}
-          onChange={(event) =>
-            onFilterChange("toDate", event.target.value)
-          }
+          onChange={(event) => onFilterChange("toDate", event.target.value)}
         />
 
         <select
           className="dr-filters-select"
           value={filters.status}
-          onChange={(event) =>
-            onFilterChange("status", event.target.value)
-          }
+          onChange={(event) => onFilterChange("status", event.target.value)}
         >
           <option value="">All Status</option>
           <option value="Planned">Planned</option>
@@ -59,9 +53,7 @@ const DRFilters = ({ filters, onFilterChange, onRefresh }) => {
         <select
           className="dr-filters-select"
           value={filters.eventType}
-          onChange={(event) =>
-            onFilterChange("eventType", event.target.value)
-          }
+          onChange={(event) => onFilterChange("eventType", event.target.value)}
         >
           <option value="">All Event Types</option>
           <option value="DR">DR</option>
@@ -69,11 +61,7 @@ const DRFilters = ({ filters, onFilterChange, onRefresh }) => {
         </select>
       </div>
 
-      <button
-        className="dr-filters-refresh"
-        type="button"
-        onClick={onRefresh}
-      >
+      <button className="dr-filters-refresh" type="button" onClick={onRefresh}>
         <svg
           className="dr-filters-refresh-icon"
           viewBox="0 0 20 20"

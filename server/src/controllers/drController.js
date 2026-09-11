@@ -11,7 +11,7 @@ const updateDRAction = async (req, res, next) => {
       drId,
       action,
       optimized,
-      submitted
+      submitted,
     );
 
     res.status(200).json({
@@ -20,10 +20,25 @@ const updateDRAction = async (req, res, next) => {
       data: dr,
     });
   } catch (error) {
-        res.status(400).json({
-        success: false,
-        message: error.message,
-        });
+    res.status(400).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};
+
+// Controller function to create a new DR event
+const createDR = async (req, res, next) => {
+  try {
+    const dr = await drService.createDR(req.body);
+
+    res.status(201).json({
+      success: true,
+      message: "DR event created successfully",
+      data: dr,
+    });
+  } catch (error) {
+    next(error);
   }
 };
 
@@ -45,7 +60,7 @@ const getAllDRs = async (req, res, next) => {
       fromDate,
       toDate,
       page,
-      limit
+      limit,
     );
 
     res.status(200).json({
@@ -61,4 +76,5 @@ const getAllDRs = async (req, res, next) => {
 module.exports = {
   getAllDRs,
   updateDRAction,
-};  
+  createDR,
+};

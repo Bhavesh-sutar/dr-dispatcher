@@ -3,6 +3,7 @@ import drService from "../services/drService";
 import DRFilters from "../components/DRFilters";
 import DRTable from "../components/DRTable";
 import Pagination from "../components/Pagination";
+import AddDREvent from "../components/AddDREvent/AddDREvent";
 
 import "./DRDispatcher.css";
 
@@ -10,6 +11,7 @@ const DRDispatcher = () => {
   const [drs, setDrs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [showAddDREvent, setShowAddDREvent] = useState(false);
 
   const [filters, setFilters] = useState({
     search: "",
@@ -69,6 +71,15 @@ const DRDispatcher = () => {
     fetchDRs(updatedFilters, 1);
   };
 
+  const handleDRCreated = () => {
+    setPagination((prev) => ({
+      ...prev,
+      page: 1,
+    }));
+
+    fetchDRs(filters, 1);
+  };
+
   const handlePageChange = (page) => {
     fetchDRs(filters, page);
   };
@@ -101,17 +112,34 @@ const DRDispatcher = () => {
           </p>
         </header>
 
+        {showAddDREvent && (
+          <AddDREvent
+            onClose={() => setShowAddDREvent(false)}
+            onCreated={handleDRCreated}
+          />
+        )}
+
         <DRFilters
           filters={filters}
           onFilterChange={handleFilterChange}
           onRefresh={handleRefresh}
         />
 
-        <Pagination
-          page={pagination.page}
-          totalPages={pagination.totalPages}
-          onPageChange={handlePageChange}
-        />
+        <div className="dr-toolbar">
+          <button
+            type="button"
+            className="add-dr-button"
+            onClick={() => setShowAddDREvent(true)}
+          >
+            + Add DR Event
+          </button>
+
+          <Pagination
+            page={pagination.page}
+            totalPages={pagination.totalPages}
+            onPageChange={handlePageChange}
+          />
+        </div>
 
         {loading && (
           <div className="dr-status dr-status-loading">

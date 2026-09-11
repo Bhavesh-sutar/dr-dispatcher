@@ -1,0 +1,566 @@
+/* ==========================================================================
+   AddDREvent.css
+   Centered modal overlay for creating a new DR event. Opened from
+   DRDispatcher via "+ Add DR Event". Clean enterprise SaaS styling —
+   no gradients, glassmorphism, or heavy rounding.
+   ========================================================================== */
+
+.add-dr-event-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+
+  background: rgba(15, 23, 42, 0.5);
+  animation: add-dr-fade-in 150ms ease;
+}
+
+@keyframes add-dr-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.add-dr-event {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 640px;
+  max-height: calc(100vh - 48px);
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+  font-family: inherit;
+  animation: add-dr-scale-in 180ms ease;
+}
+
+@keyframes add-dr-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Header
+   ------------------------------------------------------------------------- */
+
+.add-dr-event-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 20px 24px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.add-dr-event-header-text h2 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.add-dr-event-header-text p {
+  margin: 0;
+  font-size: 13.5px;
+  color: #64748b;
+}
+
+.add-dr-event-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 30px;
+  height: 30px;
+  margin-top: -2px;
+
+  font-size: 20px;
+  line-height: 1;
+  color: #64748b;
+
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+
+  transition:
+    background-color 120ms ease,
+    color 120ms ease;
+}
+
+.add-dr-event-close:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.add-dr-event-close:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* -------------------------------------------------------------------------
+   Body / form layout
+   ------------------------------------------------------------------------- */
+
+.add-dr-form {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.add-dr-event-body {
+  padding: 20px 24px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge legacy */
+}
+
+.add-dr-event-body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge (Chromium) */
+}
+
+.add-dr-error {
+  padding: 10px 14px;
+  margin-bottom: 16px;
+
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #b91c1c;
+
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.form-group input,
+.form-group select {
+  height: 38px;
+  padding: 0 12px;
+
+  font-size: 14px;
+  font-family: inherit;
+  color: #0f172a;
+
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.form-group input:hover,
+.form-group select:hover {
+  border-color: #94a3b8;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* -------------------------------------------------------------------------
+   Field-level validation error state
+   ------------------------------------------------------------------------- */
+
+.form-group.has-error label {
+  color: #b91c1c;
+}
+
+.form-group.has-error input,
+.form-group.has-error select {
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.form-group.has-error input:focus,
+.form-group.has-error select:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.14);
+}
+
+.field-error {
+  font-size: 12px;
+  font-weight: 500;
+  color: #b91c1c;
+  line-height: 1.4;
+}
+
+.field-error-block {
+  margin-bottom: 14px;
+  padding: 8px 12px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 7px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* -------------------------------------------------------------------------
+   Data Centers section
+   ------------------------------------------------------------------------- */
+
+.datacenters-section {
+  margin-top: 8px;
+  padding-top: 18px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.datacenters-header {
+  margin-bottom: 14px;
+}
+
+.datacenters-header h3 {
+  margin: 0 0 3px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.datacenters-header p {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.datacenter-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+  gap: 10px 12px;
+
+  padding: 14px;
+  margin-bottom: 10px;
+
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.datacenter-row .form-group {
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+.datacenter-row .form-group input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.datacenter-row-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.remove-datacenter-button {
+  height: 38px;
+  padding: 0 12px;
+
+  font-size: 12.5px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #b91c1c;
+
+  background: #ffffff;
+  border: 1px solid #fecaca;
+  border-radius: 7px;
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease;
+}
+
+.remove-datacenter-button:hover:not(:disabled) {
+  background: #fef2f2;
+  border-color: #f87171;
+}
+
+.remove-datacenter-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.add-datacenter-button {
+  height: 36px;
+  padding: 0 14px;
+
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #2563eb;
+
+  background: #ffffff;
+  border: 1px dashed #93c5fd;
+  border-radius: 7px;
+  cursor: pointer;
+
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease;
+}
+
+.add-datacenter-button:hover {
+  background: #eff6ff;
+  border-color: #2563eb;
+}
+
+.datacenter-note {
+  margin: 12px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #94a3b8;
+}
+
+/* -------------------------------------------------------------------------
+   Footer / actions
+   ------------------------------------------------------------------------- */
+
+.add-dr-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+
+  padding: 16px 24px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.cancel-dr-button {
+  height: 38px;
+  padding: 0 16px;
+
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #334155;
+
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  cursor: pointer;
+
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease;
+}
+
+.cancel-dr-button:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.create-dr-button {
+  height: 38px;
+  padding: 0 18px;
+
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #ffffff;
+
+  background: #2563eb;
+  border: 1px solid #2563eb;
+  border-radius: 7px;
+  cursor: pointer;
+
+  transition: background-color 120ms ease;
+}
+
+.create-dr-button:hover {
+  background: #1d4ed8;
+}
+
+.cancel-dr-button:focus-visible,
+.create-dr-button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* -------------------------------------------------------------------------
+   Responsive
+   ------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------
+   Confirmation dialog (nested overlay on top of the Add DR Event modal)
+   ------------------------------------------------------------------------- */
+
+.confirmation-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+
+  background: rgba(15, 23, 42, 0.55);
+  animation: add-dr-fade-in 150ms ease;
+}
+
+.confirmation-dialog {
+  width: 100%;
+  max-width: 400px;
+
+  padding: 22px 22px 20px;
+
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.12),
+    0 4px 6px -4px rgba(0, 0, 0, 0.12);
+
+  font-family: inherit;
+  animation: add-dr-scale-in 180ms ease;
+}
+
+.confirmation-dialog h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.confirmation-dialog p {
+  margin: 0 0 8px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #475569;
+}
+
+.confirmation-warning {
+  font-weight: 600;
+  color: #b45309;
+}
+
+.confirmation-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.confirmation-cancel-button {
+  height: 36px;
+  padding: 0 16px;
+
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #334155;
+
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  cursor: pointer;
+
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease;
+}
+
+.confirmation-cancel-button:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+.confirmation-confirm-button {
+  height: 36px;
+  padding: 0 16px;
+
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #ffffff;
+
+  background: #2563eb;
+  border: 1px solid #2563eb;
+  border-radius: 7px;
+  cursor: pointer;
+
+  transition: background-color 120ms ease;
+}
+
+.confirmation-confirm-button:hover {
+  background: #1d4ed8;
+}
+
+.confirmation-cancel-button:focus-visible,
+.confirmation-confirm-button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .add-dr-event-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .add-dr-event {
+    max-width: none;
+    max-height: 92vh;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .datacenter-row {
+    grid-template-columns: 1fr;
+  }
+
+  .remove-datacenter-button {
+    width: 100%;
+  }
+}

@@ -8,7 +8,7 @@ const getDRs = async ({
   fromDate = "",
   toDate = "",
   page = 1,
-  limit = 10
+  limit = 10,
 } = {}) => {
   const params = {};
 
@@ -26,12 +26,7 @@ const getDRs = async ({
 };
 
 // Update Action / Optimized / Submitted / Status of a DR
-const updateDRAction = async (
-  drId,
-  action,
-  optimized,
-  submitted
-) => {
+const updateDRAction = async (drId, action, optimized, submitted) => {
   const response = await api.patch(`/dr/${drId}/action`, {
     action,
     optimized,
@@ -41,9 +36,17 @@ const updateDRAction = async (
   return response.data;
 };
 
+// Create a new DR event
+const createDR = async (drData) => {
+  const response = await api.post("/dr", drData);
+
+  return response.data;
+};
+
 const drService = {
   getDRs,
   updateDRAction,
+  createDR,
 };
 
 export default drService;
